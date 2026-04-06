@@ -1,0 +1,25 @@
+@startuml
+
+interface Prototype {
+  + clone() : Documento
+}
+
+class Documento {
+  - titulo : String
+  - setorResponsavel : String
+  - conteudo : String
+  - assinatura : String
+  - data : String
+  - prioridade : String
+  + clone() : Documento
+  + toString() : String
+}
+
+class MainPrototype {
+  + main(args : String[]) : void
+}
+
+Documento ..|> Prototype
+MainPrototype --> Documento
+
+@enduml

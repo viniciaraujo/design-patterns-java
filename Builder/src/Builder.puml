@@ -1,0 +1,75 @@
+@startuml
+
+class Computador {
+  - processador : String
+  - memoriaRAM : int
+  - armazenamento : int
+  - placaDeVideo : String
+  - sistemaOperacional : String
+  - tecladoMecanico : boolean
+  - monitorAdicional : boolean
+  + toString() : String
+}
+
+interface ComputadorBuilder {
+  + comProcessador(processador : String) : ComputadorBuilder
+  + comMemoriaRAM(memoriaRAM : int) : ComputadorBuilder
+  + comArmazenamento(armazenamento : int) : ComputadorBuilder
+  + comPlacaDeVideo(placa : String) : ComputadorBuilder
+  + comSistemaOperacional(so : String) : ComputadorBuilder
+  + comTecladoMecanico(teclado : boolean) : ComputadorBuilder
+  + comMonitorAdicional(monitor : boolean) : ComputadorBuilder
+  + build() : Computador
+}
+
+class ComputadorBuilderImpl {
+  - computador : Computador
+}
+
+class Main {
+  + main(args : String[]) : void
+}
+
+ComputadorBuilderImpl ..|> ComputadorBuilder
+ComputadorBuilderImpl --> Computador
+Main --> ComputadorBuilderImpl
+Main --> Computador
+
+@enduml@startuml
+
+       class Computador {
+         - processador : String
+         - memoriaRAM : int
+         - armazenamento : int
+         - placaDeVideo : String
+         - sistemaOperacional : String
+         - tecladoMecanico : boolean
+         - monitorAdicional : boolean
+         + toString() : String
+       }
+
+       interface ComputadorBuilder {
+         + comProcessador(processador : String) : ComputadorBuilder
+         + comMemoriaRAM(memoriaRAM : int) : ComputadorBuilder
+         + comArmazenamento(armazenamento : int) : ComputadorBuilder
+         + comPlacaDeVideo(placa : String) : ComputadorBuilder
+         + comSistemaOperacional(so : String) : ComputadorBuilder
+         + comTecladoMecanico(teclado : boolean) : ComputadorBuilder
+         + comMonitorAdicional(monitor : boolean) : ComputadorBuilder
+         + build() : Computador
+       }
+
+       class ComputadorBuilderImpl {
+         - computador : Computador
+       }
+
+       class Main {
+         + main(args : String[]) : void
+       }
+
+       ComputadorBuilderImpl ..|> ComputadorBuilder
+       ComputadorBuilderImpl --> Computador
+       Main --> ComputadorBuilderImpl
+       Main --> Computador
+
+       @enduml

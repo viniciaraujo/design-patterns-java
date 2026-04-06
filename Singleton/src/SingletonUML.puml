@@ -1,0 +1,18 @@
+@startuml
+
+class Logger {
+    - static Logger instancia
+    - List<String> logs
+    - Logger()
+    + static Logger getInstance()
+    + void log(String mensagem)
+    + void exibirLogs()
+}
+
+class Main {
+    + main(String[] args)
+}
+
+Main --> Logger : usa
+
+@enduml
